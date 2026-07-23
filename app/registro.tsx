@@ -6,10 +6,10 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 
-export default function Login() {
+export default function Registro() {
   return (
     <View className="flex-1 justify-center items-center bg-white px-4">
       <View className="w-full px-6 pb-12 items-center">
@@ -20,18 +20,29 @@ export default function Login() {
         />
 
         <Text className="mb-2 font-bold text-3xl text-center text-gray-500">
-          Bienvenido de Nuevo
+          Crea tu Cuenta
         </Text>
 
         <Text className="mb-6 text-sm text-center text-gray-400">
-          Ingresa tus datos para iniciar sesión
+          Ingresa tus datos para registrarte
         </Text>
-
-        
 
         <View className="relative w-11/12 mb-6">
           <View className="absolute -top-2.5 left-4 bg-white px-1 z-10">
-            <Text className="text-xs font-medium  text-gray-500">
+            <Text className="text-xs font-medium text-gray-500">
+              Nombre completo
+            </Text>
+          </View>
+          <TextInput
+            className="w-full border rounded-2xl p-3.5 text-base text-gray-800 border-gray-300"
+            placeholder="Ingresa tu nombre"
+            autoCapitalize="words"
+          />
+        </View>
+
+        <View className="relative w-11/12 mb-6">
+          <View className="absolute -top-2.5 left-4 bg-white px-1 z-10">
+            <Text className="text-xs font-medium text-gray-500">
               Correo electrónico
             </Text>
           </View>
@@ -64,17 +75,17 @@ export default function Login() {
 
         <Pressable className="w-11/12 py-3 rounded-2xl bg-[#4C5AE0] active:opacity-90">
           <Text className="text-center text-white font-bold text-sm">
-            Iniciar Sesión
+            Regístrate
           </Text>
         </Pressable>
 
         <View className="flex-row justify-center items-center mt-6">
-          <Text className="text-gray-500 text-sm">¿No tienes cuenta? </Text>
+          <Text className="text-gray-500 text-sm">¿Ya tienes una cuenta? </Text>
           <Link
-            href="/registro"
+            href="/login"
             className="text-blue-500 font-bold text-sm active:opacity-70"
           >
-            Regístrate
+            Inicia sesión
           </Link>
         </View>
       </View>
