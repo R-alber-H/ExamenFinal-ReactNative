@@ -3,10 +3,14 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from '@expo/vector-icons';
 import CardCategoria from "@/components/card_categorias";
 import { DATA_CATEGORIAS } from "@/data/categorias";
+import Banner from "@/components/banner";
+import { CardProducto } from "@/components/card_productos";
+import { Productos } from "@/data/productos";
+
 
 export default function Home() {
   const logueado = true;
-  
+
   return (
     <SafeAreaView className="flex-1 bg-slate-50">
       <ScrollView className="pt-2" showsVerticalScrollIndicator={false}>
@@ -47,7 +51,7 @@ export default function Home() {
           />
         </View>
 
-        <Text className="text-lg font-bold text-slate-800 mb-3 px-4">Categorías</Text>
+        <Text className="text-lg font-bold text-slate-800 mb-3 px-6">Categorías</Text>
 
         <FlatList
           data={DATA_CATEGORIAS}
@@ -56,7 +60,28 @@ export default function Home() {
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <CardCategoria data={item} />}
           contentContainerStyle={{ paddingHorizontal: 16, gap: 12 }}
-          className="mb-6"
+          className="mb-2"
+        />
+
+        <View className="px-4">
+          <Banner></Banner>
+        </View>
+
+        <Text className="text-lg font-bold text-slate-800 mb-3 px-6">Productos Exclusivos</Text>
+
+        <FlatList
+          data={Productos}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <CardProducto producto={item} />}
+          ListEmptyComponent={() => (
+            <View className="w-full items-center py-10">
+              <Text className="text-slate-400 text-base">No se encontraron productos.</Text>
+            </View>
+          )}
+          contentContainerStyle={{ paddingHorizontal: 16, gap: 12 }}
+          className="mb-4"
         />
 
       </ScrollView>

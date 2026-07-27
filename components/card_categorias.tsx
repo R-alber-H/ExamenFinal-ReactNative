@@ -14,13 +14,13 @@ export default function CardCategoria({ data }: any) {
   return (
     <TouchableOpacity 
       activeOpacity={0.8}
-      style={{ width: 144 }}
+      style={{ width: 120 }}
       className={`rounded-2xl p-3 shadow-sm border justify-between overflow-hidden ${className}`}
     >
       <View className="rounded-xl p-2 mb-2 items-center justify-center">
         <Image
           source={data.imagen}
-          className="w-full h-24"
+          className="w-full h-16"
           resizeMode="contain"
         />
       </View>
