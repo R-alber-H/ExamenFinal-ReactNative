@@ -2,7 +2,7 @@
 import { Producto } from './productos';
 
 
-export const ProductosNaruto : Producto[] = [
+export const ProductosTienda : Producto[] = [
     {
     id: '1',
     nombre: 'Sasuke Uchiha',
@@ -30,6 +30,64 @@ export const ProductosNaruto : Producto[] = [
     categoria: "Naruto",
     precio: 89.99,
     imagen: require('../assets/sasuke_funko.png'),  
+  },
+
+  {
+    id: '5',
+    nombre: 'Goku fase 1',
+    categoria: "Dragon Ball",
+    precio: 89.99,
+    imagen: require('../assets/gokuFunko.png'), 
+  },
+  {
+    id: '6',
+    nombre: 'Goku fase 1',
+    categoria: "Dragon Ball",
+    precio: 89.99,
+    imagen: require('../assets/gokuFunko.png'),  
+  },
+  {
+    id: '7',
+    nombre: 'Goku fase 1',
+    categoria: "Dragon Ball",
+    precio: 89.99,
+    imagen: require('../assets/gokuFunko.png'), 
+  },
+  {
+    id: '8',
+    nombre: 'Luffy Gear',
+    categoria: "Dragon Ball",
+    precio: 89.99,
+    imagen: require('../assets/gokuFunko.png'),  
+  },
+
+  {
+    id: '9',
+    nombre: 'Luffy Gear',
+    categoria: "One Piece",
+    precio: 89.99,
+    imagen: require('../assets/luffyFunko.png'), 
+  },
+  {
+    id: '10',
+    nombre: 'Luffy Gear',
+    categoria: "One Piece",
+    precio: 89.99,
+    imagen: require('../assets/luffyFunko.png'),  
+  },
+  {
+    id: '11',
+    nombre: 'Luffy Gear',
+    categoria: "One Piece",
+    precio: 89.99,
+    imagen: require('../assets/luffyFunko.png'), 
+  },
+  {
+    id: '12',
+    nombre: 'Luffy Gear',
+    categoria: "One Piece",
+    precio: 89.99,
+    imagen: require('../assets/luffyFunko.png'),  
   },
 
 ]

@@ -12,8 +12,14 @@ export default function CardCategoria({ data }: any) {
   const className = COLOR_MAP[data.color] ?? 'bg-slate-500 border-slate-400';
 
   return (
-    // Envolvemos el TouchableOpacity con Link usando asChild
-    <Link href="/categoria" asChild>
+
+    <Link 
+      href={{
+        pathname: "/categoria",
+        params: { categoriaNombre: data.nombre }
+      }} 
+      asChild
+    >
       <TouchableOpacity 
         activeOpacity={0.8}
         style={{ width: 120 }}

@@ -1,7 +1,7 @@
 
 import { ImageBackground, View, Text, Image } from "react-native";
 
-export default function BannerCategoria() {
+export default function BannerCategoria({nombre}:{nombre:string}) {
   return (
     <ImageBackground
       source={require("../assets/fondo_banner_categoria.png")}
@@ -15,7 +15,7 @@ export default function BannerCategoria() {
             Coleccion
           </Text>
           <Text className="text-2xl ml-4 font-bold text-white tracking-wide ">
-            Naruto
+            {nombre}
           </Text>
           <Text className="text-lg ml-4 font-semibold text-white tracking-wide mt-1">
             Premium
