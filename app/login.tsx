@@ -1,20 +1,13 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import {
-  Image,
-  Pressable,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import {Image, Pressable, Text, TextInput, TouchableOpacity, View} from "react-native";
 
 export default function Login() {
   return (
     <View className="flex-1 justify-center items-center bg-white px-4">
       <View className="w-full px-6 pb-12 items-center">
         <Image
-          source={require("../assets/logo_2.png")}
+          source={require("../assets/logo_funko.png")}
           className="w-[200px] h-[200px] mb-1"
           resizeMode="contain"
         />

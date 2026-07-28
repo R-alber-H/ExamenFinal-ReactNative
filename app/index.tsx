@@ -1,7 +1,6 @@
 import { View, Text, Image, TouchableOpacity, ImageBackground } from "react-native";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { colors } from "@/theme";
 
 export default function Index() {
   return (
@@ -26,7 +25,7 @@ export default function Index() {
             Encuentra esa pieza clave para completar tu colección
           </Text>
 
-          <Link href="/login" asChild>
+          <Link href="/home" asChild>
             <TouchableOpacity
               activeOpacity={0.8}
               className="w-full max-w-xs py-4 rounded-full items-center justify-center shadow-lg bg-orange-500 active:bg-orange-600"
