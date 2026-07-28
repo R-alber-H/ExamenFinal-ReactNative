@@ -2,10 +2,9 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Producto } from '@/data/productos';
 
-export function CardProducto({ producto }: { producto: Producto }) {
+export function CardProductoColumna({ producto }: { producto: Producto }) {
   return (
-
-    <View className="border border-slate-200 rounded-3xl w-40 p-3 justify-between bg-white shadow-sm">
+    <View className="border border-slate-200 rounded-3xl w-[48%] mb-4 p-3 justify-between bg-white shadow-sm">
       <Image
         source={producto.imagen}
         className="w-full h-28 rounded-2xl mb-2"
