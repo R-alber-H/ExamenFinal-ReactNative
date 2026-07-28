@@ -10,6 +10,7 @@ export default function RootLayout() {
         <Stack.Screen name="registro" />
         <Stack.Screen name="home" />
         <Stack.Screen name="categoria" />
+        <Stack.Screen name="carrito" />
       </Stack>
     </>
   );
