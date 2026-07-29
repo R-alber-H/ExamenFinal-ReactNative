@@ -18,14 +18,14 @@ export default function Categoria() {
 
   return (
     <View className="flex-1 px-4 bg-white pt-4">
-      <View className="flex-row items-center mt-4">
+      <View className="flex-row items-center  mt-4">
         <Link href="/home" asChild>
           <TouchableOpacity className="active:opacity-80">
             <Image
-              source={require("../assets/logo_funko_2.png")}
-              className="w-40 h-12"
-              resizeMode="contain"
-            />
+            source={require("../assets/logo_funko_2.png")}
+            className="w-40 h-12"
+            resizeMode="contain"
+          />
           </TouchableOpacity>
         </Link>
       </View>
