@@ -1,8 +1,12 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Producto } from '@/data/productos';
+import { useCarrito } from '@/context/CarritoContext';
 
 export function CardProductoColumna({ producto }: { producto: Producto }) {
+
+  const { agregar } = useCarrito();
+
   return (
     <View className="border border-slate-200 rounded-3xl w-[48%] mb-4 p-3 justify-between bg-white shadow-sm">
       <Image
@@ -20,7 +24,9 @@ export function CardProductoColumna({ producto }: { producto: Producto }) {
         </Text>
       </View>
 
-      <TouchableOpacity className="bg-[#4C5AE0] py-2 rounded-xl mt-3 flex-row items-center justify-center active:opacity-90">
+      <TouchableOpacity className="bg-[#4C5AE0] py-2 rounded-xl mt-3 flex-row items-center justify-center active:opacity-90"
+        onPress={() => agregar(producto)}
+      >
         <MaterialCommunityIcons name="plus" size={16} color="#ffffff" />
         <Text className="text-white font-bold text-xs ml-1">Agregar</Text>
       </TouchableOpacity>

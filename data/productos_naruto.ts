@@ -12,24 +12,24 @@ export const ProductosTienda : Producto[] = [
   },
   {
     id: '2',
-    nombre: 'Sasuke Uchiha',
+    nombre: 'Itachi Uchiha',
     categoria: "Naruto",
     precio: 89.99,
-    imagen: require('../assets/sasuke_funko.png'),  
+    imagen: require('../assets/funkoItachi.png'),  
   },
   {
     id: '3',
-    nombre: 'Sasuke Uchiha',
+    nombre: 'Kakashi Hatake',
     categoria: "Naruto",
     precio: 89.99,
-    imagen: require('../assets/sasuke_funko.png'), 
+    imagen: require('../assets/funkoKakashi.png'), 
   },
   {
     id: '4',
     nombre: 'Sasuke Uchiha',
     categoria: "Naruto",
     precio: 89.99,
-    imagen: require('../assets/sasuke_funko.png'),  
+    imagen: require('../assets/funkoNaruto.png'),  
   },
 
   {

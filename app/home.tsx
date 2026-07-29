@@ -6,16 +6,20 @@ import { DATA_CATEGORIAS } from "@/data/categorias";
 import Banner from "@/components/banner";
 import { CardProducto } from "@/components/card_productos";
 import { Productos } from "@/data/productos";
+import { useCarrito } from "@/context/CarritoContext";
+import { Link } from "expo-router";
 
 
 export default function Home() {
   const logueado = true;
+  const { productos } = useCarrito();
+  const cantidadProductos = productos.length;
 
   return (
     <SafeAreaView className="flex-1 bg-slate-50">
       <ScrollView className="pt-2" showsVerticalScrollIndicator={false}>
 
-        <View className="flex-row items-center justify-between mb-4 px-4 mt-2">
+        <View className="flex-row items-center justify-between mb-4 px-4 mt-4">
           <Image
             source={require("../assets/logo_funko_2.png")}
             className="w-40 h-12"
@@ -27,13 +31,17 @@ export default function Home() {
               <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100">
                 <Ionicons name="person-outline" size={20} color="#0f172a" />
               </TouchableOpacity>
+              <Link href="/carrito" asChild>
+                <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100 relative">
+                  <Ionicons name="cart-outline" size={20} color="#0f172a" />
+                  {cantidadProductos > 0 &&
+                    <View className="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 items-center justify-center">
+                      <Text className="text-[10px] text-white font-bold">{cantidadProductos}</Text>
+                    </View>}
 
-              <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100 relative">
-                <Ionicons name="cart-outline" size={20} color="#0f172a" />
-                <View className="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 items-center justify-center">
-                  <Text className="text-[10px] text-white font-bold">2</Text>
-                </View>
-              </TouchableOpacity>
+                </TouchableOpacity>
+              </Link>
+
             </View>
           ) : (
             <TouchableOpacity className="bg-slate-900 px-4 py-2 rounded-xl">
