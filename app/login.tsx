@@ -20,8 +20,6 @@ export default function Login() {
           Ingresa tus datos para iniciar sesión
         </Text>
 
-        
-
         <View className="relative w-11/12 mb-6">
           <View className="absolute -top-2.5 left-4 bg-white px-1 z-10">
             <Text className="text-xs font-medium  text-gray-500">
