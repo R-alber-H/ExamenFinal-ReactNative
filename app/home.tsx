@@ -8,12 +8,13 @@ import { CardProducto } from "@/components/card_productos";
 import { Productos } from "@/data/productos";
 import { useCarrito } from "@/context/CarritoContext";
 import { Link } from "expo-router";
+import { useAuth } from "@/context/AuthContext";
 
 
 export default function Home() {
-  const logueado = true;
   const { productos } = useCarrito();
   const cantidadProductos = productos.length;
+  const { usuarioActual,logout } = useAuth();
 
   return (
     <SafeAreaView className="flex-1 bg-slate-50">
@@ -26,11 +27,12 @@ export default function Home() {
             resizeMode="contain"
           />
 
-          {logueado ? (
+          {usuarioActual ? (
             <View className="flex-row items-center gap-3">
               <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100">
                 <Ionicons name="person-outline" size={20} color="#0f172a" />
               </TouchableOpacity>
+
               <Link href="/carrito" asChild>
                 <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100 relative">
                   <Ionicons name="cart-outline" size={20} color="#0f172a" />
@@ -38,15 +40,22 @@ export default function Home() {
                     <View className="absolute -top-1 -right-1 bg-red-500 rounded-full w-4 h-4 items-center justify-center">
                       <Text className="text-[10px] text-white font-bold">{cantidadProductos}</Text>
                     </View>}
-
                 </TouchableOpacity>
               </Link>
 
+              <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100"
+              onPress={logout}
+              >
+                <Ionicons name="exit-outline" size={20} color="#0f172a" />
+              </TouchableOpacity>
+
             </View>
           ) : (
-            <TouchableOpacity className="bg-slate-900 px-4 py-2 rounded-xl">
-              <Text className="text-white font-medium text-sm">Ingresar</Text>
-            </TouchableOpacity>
+            <Link href="/login" asChild>
+              <TouchableOpacity className="bg-blue-700 px-4 py-2 rounded-xl">
+                <Text className="text-white font-medium text-sm">Ingresar</Text>
+              </TouchableOpacity>
+            </Link>
           )}
         </View>
 

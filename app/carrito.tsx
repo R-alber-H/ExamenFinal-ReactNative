@@ -3,12 +3,12 @@ import { FlatList, View, Text, TouchableOpacity, Image, Alert } from "react-nati
 import { useCarrito } from "@/context/CarritoContext";
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { router } from "expo-router";
 
 export default function Carrito() {
   const { productos, eliminar, limpiarCarrito } = useCarrito();
 
   const total = productos.reduce((acc, item) => acc + item.precio, 0);
+  
   const vaciarCarrito = () => {
     limpiarCarrito();
     Alert.alert(
@@ -17,7 +17,6 @@ export default function Carrito() {
       [
         {
           text: "Aceptar",
-          onPress: () => router.replace("/home")
         }
       ]
     );
