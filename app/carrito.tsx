@@ -17,7 +17,7 @@ export default function Carrito() {
       [
         {
           text: "Aceptar",
-          onPress: () => router.replace("/home")
+          // onPress: () => router.replace("/home")
         }
       ]
     );
