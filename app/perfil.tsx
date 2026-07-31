@@ -1,10 +1,25 @@
 import { useAuth } from "@/context/AuthContext";
 import { Ionicons } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import { TouchableOpacity, View, Text, Image, ScrollView } from "react-native";
+import { useState, useEffect } from "react";
+import { TouchableOpacity, View, Text, Image, ScrollView, ActivityIndicator } from "react-native";
+import { obtenerPokemonAleatorio } from "@/services/pokemonService";
 
 export default function Perfil() {
   const { usuarioActual, logout } = useAuth();
+  const [pokemonInfo, setPokemonInfo] = useState({ content: '', author: '', image: '' });
+  const [loading, setLoading] = useState(true);
+
+  const cargarPokemon = async () => {
+    setLoading(true);
+    const resultado = await obtenerPokemonAleatorio();
+    setPokemonInfo(resultado);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    cargarPokemon();
+  }, []);
 
   return (
     <ScrollView className="flex-1 bg-slate-50" contentContainerStyle={{ paddingBottom: 40 }}>
@@ -31,7 +46,7 @@ export default function Perfil() {
         <View className="relative mb-3 shadow-md">
           <Image
             source={require("../assets/avatar.jpg")}
-            className="w-36 h-36 rounded-full border-4 border-white"
+            className="w-32 h-32 rounded-full border-4 border-white"
             resizeMode="cover"
           />
         </View>
@@ -43,15 +58,38 @@ export default function Perfil() {
           {usuarioActual?.email || "correo@example.com"}
         </Text>
 
-        <View className="bg-orange-50 border border-orange-100 px-4 py-2.5 rounded-2xl w-full max-w-xs">
-          <Text className="text-xs text-center text-orange-700 font-medium italic">
-            "El Camino ninja es nunca rendirse"
-          </Text>
-        </View>
+       <View className="bg-orange-50 border border-orange-100 px-4 py-4 rounded-2xl w-full max-w-xs items-center justify-center">
+        {loading ? (
+          <ActivityIndicator size="small" color="#c2410c" />
+        ) : (
+          <>
+            {pokemonInfo.image ? (
+              <Image
+                source={{ uri: pokemonInfo.image }}
+                className="w-24 h-24 "
+                resizeMode="contain"
+              />
+            ) : null}
+
+            <Text className="text-xs text-center text-orange-700 font-bold italic mb-1">
+              {pokemonInfo.content}
+            </Text>
+            <Text className="text-[10px] text-center text-orange-500 font-medium mt-1">
+              - {pokemonInfo.author}
+            </Text>
+            <TouchableOpacity 
+              onPress={cargarPokemon}
+              className="mt-3 bg-orange-500 px-4 py-2 rounded-xl"
+            >
+              <Text className="text-white text-xs font-bold">Cambiar Pokémon</Text>
+            </TouchableOpacity>
+          </>
+        )}
+      </View>
       </View>
 
       <View className="px-6">
-  <Text className="text-base font-bold text-slate-800 mb-3">
+  <Text className="text-base font-bold text-slate-800 mb-6">
     Funkos Favoritos
   </Text>
 
@@ -75,7 +113,7 @@ export default function Perfil() {
       <Text className="text-xs font-semibold text-slate-700">Itachi Uchiha</Text>
     </View>
 
-    <View className="w-[48%] bg-white p-3 rounded-2xl border border-slate-100 shadow-sm items-center mb-2">
+    {/* <View className="w-[48%] bg-white p-3 rounded-2xl border border-slate-100 shadow-sm items-center mb-2">
       <Image
         source={require("../assets/funkoKakashi.png")}
         className="w-full h-32 mb-2"
@@ -91,7 +129,7 @@ export default function Perfil() {
         resizeMode="contain"
       />
       <Text className="text-xs font-semibold text-slate-700">Itachi Uchiha</Text>
-    </View>
+    </View> */}
 
   </View>
 </View>

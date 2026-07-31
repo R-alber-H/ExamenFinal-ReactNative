@@ -18,7 +18,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     usuarios: [
       {
         id: '1',
-        name: 'Jorge Casas',
+        name: 'Ricardo Alberco',
         email: 'usuario1@gmail.com',
         phone: '555-0101',
         address: 'Av. Universitaria 123',
