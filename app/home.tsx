@@ -29,10 +29,12 @@ export default function Home() {
 
           {usuarioActual ? (
             <View className="flex-row items-center gap-3">
+              <Link href="/perfil" asChild>
               <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100">
                 <Ionicons name="person-outline" size={20} color="#0f172a" />
               </TouchableOpacity>
-
+              </Link>
+              
               <Link href="/carrito" asChild>
                 <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100 relative">
                   <Ionicons name="cart-outline" size={20} color="#0f172a" />
