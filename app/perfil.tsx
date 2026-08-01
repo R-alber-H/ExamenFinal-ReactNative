@@ -24,21 +24,23 @@ export default function Perfil() {
   return (
     <ScrollView className="flex-1 bg-slate-50" contentContainerStyle={{ paddingBottom: 40 }}>
   
-      <View className="flex-row items-center justify-between px-6 pt-12 pb-4 bg-white ">
+      <View className="flex-row items-center justify-between px-6 pt-12 pb-4 bg-white">
         <Link href="/home" asChild>
-          <TouchableOpacity className="p-2.5 bg-slate-50 rounded-full border border-slate-200">
+          <TouchableOpacity className="p-2.5 bg-white rounded-full border border-slate-100">
             <Ionicons name="arrow-back-outline" size={20} color="#0f172a" />
           </TouchableOpacity>
         </Link>
 
         <Text className="text-lg font-bold text-slate-800">Mi Perfil</Text>
-
+        
+        <Link href="/historial" asChild> 
         <TouchableOpacity 
-          className="p-2.5 bg-red-50 rounded-full border border-red-100" 
-          onPress={logout}
+          className="p-2.5 bg-white rounded-full border border-slate-100" 
         >
-          <Ionicons name="exit-outline" size={20} color="#ef4444" />
+          <Ionicons name="document-text-outline" size={20} color="#0f172a" />
         </TouchableOpacity>
+        </Link>
+        
       </View>
 
       <View className="items-center px-6 pt-6 pb-6 bg-white mb-4">

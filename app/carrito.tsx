@@ -3,14 +3,18 @@ import { FlatList, View, Text, TouchableOpacity, Image, Alert } from "react-nati
 import { useCarrito } from "@/context/CarritoContext";
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { usePedido } from '../hooks/usePedido'; 
 
 export default function Carrito() {
   const { productos, eliminar, limpiarCarrito } = useCarrito();
+  const { crearPedido } = usePedido();
 
   const total = productos.reduce((acc, item) => acc + item.precio, 0);
+  const cantidad_productos = productos.length;
   
-  const vaciarCarrito = () => {
+  const vaciarCarrito = async () => {
     limpiarCarrito();
+    await crearPedido({total, cantidad_productos})
     Alert.alert(
       "¡Compra exitosa!",
       "Tu pedido ha sido procesado correctamente.",

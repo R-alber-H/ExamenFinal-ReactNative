@@ -3,18 +3,28 @@ import { FlatList, Text, View, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { usePedido } from '../hooks/usePedido'; 
 import { Pedido } from '../domain/entities/pedido';
+import { Link } from 'expo-router';
+import { Ionicons } from '@expo/vector-icons';
 
-export function Historial() {
+export default function Historial() {
   const { pedidos, loading, error, cambiarEstado, eliminarPedido } = usePedido();
 
   return (
     <SafeAreaView className="flex-1 bg-slate-50">
-      <View className="flex-1 px-5 pt-4">
-        <Text className="text-xs font-extrabold tracking-widest text-indigo-600">
-          HISTORIAL DE COMPRAS
-        </Text>
-        <Text className="mt-1 text-3xl font-black text-slate-900">Mis Pedidos</Text>
-        <Text className="mt-1 text-slate-500">
+      <View className="flex-1 px-5 pt-2">
+
+        <View className="flex-row items-center justify-between px-6 pt-12 pb-4 bg-white ">
+        <Link href="/perfil" asChild>
+          <TouchableOpacity className="p-2.5 bg-slate-50 rounded-full border border-slate-200">
+            <Ionicons name="arrow-back-outline" size={20} color="#0f172a" />
+          </TouchableOpacity>
+        </Link>
+
+        <Text className="text-lg font-bold text-slate-800">Mi Historial</Text>
+        <View></View>
+      </View>
+
+        <Text className="mt-1 text-slate-500 px-5 text-sm">
           Revisa el estado de tus compras de Funkos guardadas localmente.
         </Text>
 
