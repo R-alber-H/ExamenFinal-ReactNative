@@ -1,6 +1,7 @@
 import { carritoReducer } from '@/reducers/carritoReducer';
 import { Producto } from '../domain/entities/producto';
 import { createContext, PropsWithChildren, useContext, useReducer } from "react";
+import { mostrarExito } from '@/ultis/toast';
 
 interface CarritoContextValue {
     productos: Producto[];
@@ -17,6 +18,7 @@ export function CarritoProvider({ children }: PropsWithChildren) {
 
     const agregar = (producto: Producto) => {
         dispatch({ type: 'AGREGAR', payload: producto });
+        mostrarExito("¡Listo!", "Producto Agregado");
     }
 
     const eliminar = (id: string) => {
