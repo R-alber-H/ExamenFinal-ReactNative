@@ -1,50 +1,84 @@
-# Welcome to your Expo app 👋
+# 🎮 FunkoVerse
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+FunkoVerse es una aplicación móvil desarrollada con **React Native**, **Expo Router** y **NativeWind** que simula una tienda de figuras Funko Pop.
 
-## Get started
+El proyecto fue desarrollado de manera individual para el curso **Desarrollo de Aplicaciones Móviles I**, con el objetivo de aplicar conceptos de navegación, persistencia local mediante SQLite, consumo de APIs REST y gestión de estado.
 
-1. Install dependencies
+## ✨ Funcionalidades
 
-   ```bash
-   npm install
-   ```
+- 🔐 Inicio de sesión simulado.
+- 🛍️ Catálogo de Funkos.
+- 🛒 Carrito de compras.
+- 💾 Registro de pedidos utilizando SQLite.
+- 📋 Historial de pedidos.
+- ✏️ Cambio de estado de los pedidos.
+- 🗑️ Eliminación de pedidos.
+- 🎲 Consumo de la PokéAPI para mostrar un Pokémon aleatorio en la pantalla de perfil.
 
-2. Start the app
+## 🛠️ Tecnologías
 
-   ```bash
-   npx expo start
-   ```
+- React Native
+- Expo
+- Expo Router
+- TypeScript
+- NativeWind
+- SQLite (expo-sqlite)
+- Context API
+- React Native Reanimated
 
-In the output, you'll find options to open the app in a
+## 📂 Estructura del proyecto
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+app/
+components/
+context/
+data/
+domain/
+hooks/
+infrastructure/
+reducers/
+services/
+theme/
+utils/
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 💾 Persistencia de datos
 
-## Learn more
+El carrito de compras se administra en memoria durante la sesión del usuario.
 
-To learn more about developing your project with Expo, look at the following resources:
+Cuando el usuario confirma la compra, se registra un nuevo pedido en **SQLite**, permitiendo:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Crear pedidos.
+- Consultar el historial.
+- Actualizar el estado del pedido.
+- Eliminar pedidos.
 
-## Join the community
+## 🌐 Consumo de API
 
-Join our community of developers creating universal apps.
+La aplicación realiza una petición **GET** a la **PokéAPI** para obtener un Pokémon aleatorio que se muestra en la pantalla de perfil como una funcionalidad recreativa. Además, se implementa manejo de errores mostrando un Pokémon de respaldo en caso de fallo.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🚀 Instalación
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/R-alber-H/ExamenFinal-ReactNative.git
+```
+
+Instala las dependencias:
+
+```bash
+npm install
+```
+
+Ejecuta la aplicación:
+
+```bash
+npx expo start
+```
+
+## 👨‍💻 Autor
+
+Ricardo Angel Alberco Huamancusi
+
+Proyecto desarrollado para el curso **Desarrollo de Aplicaciones Móviles I**.

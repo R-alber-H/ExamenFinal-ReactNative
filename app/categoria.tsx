@@ -5,6 +5,7 @@ import { FlatList, View, Text, TouchableOpacity, Image } from "react-native";
 import { Link, useLocalSearchParams } from "expo-router";
 
 export default function Categoria() {
+  
   // Capturamos el parámetro enviado desde el Link
   const { categoriaNombre } = useLocalSearchParams();
 
