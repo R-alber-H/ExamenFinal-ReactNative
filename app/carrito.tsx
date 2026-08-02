@@ -1,9 +1,10 @@
 import CardCarrito from "@/components/card_carrito";
-import { FlatList, View, Text, TouchableOpacity, Image, Alert } from "react-native";
+import { FlatList, View, Text, TouchableOpacity, Image } from "react-native";
 import { useCarrito } from "@/context/CarritoContext";
 import { Link } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { usePedido } from '../hooks/usePedido'; 
+import { mostrarExito } from "@/ultis/toast";
 
 export default function Carrito() {
   const { productos, eliminar, limpiarCarrito } = useCarrito();
@@ -15,15 +16,7 @@ export default function Carrito() {
   const vaciarCarrito = async () => {
     limpiarCarrito();
     await crearPedido({total, cantidad_productos})
-    Alert.alert(
-      "¡Compra exitosa!",
-      "Tu pedido ha sido procesado correctamente.",
-      [
-        {
-          text: "Aceptar",
-        }
-      ]
-    );
+    mostrarExito("¡Compra exitosa!", "Tu pedido ha sido procesado correctamente.");
   };
 
   return (

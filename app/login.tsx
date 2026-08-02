@@ -1,9 +1,10 @@
 import { useAuth } from "@/context/AuthContext";
 import { Ionicons } from "@expo/vector-icons";
 import { Link, useRouter } from "expo-router";
-import { Alert, Image, Pressable, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useLoginForm } from "@/hooks/useLoginFrom";
 import { useState } from "react";
+import { mostrarError } from "@/ultis/toast";
 
 export default function Login() {
   const router = useRouter(); 
@@ -28,7 +29,8 @@ export default function Login() {
     if(exito){
       router.replace('/home');
     }else{
-      Alert.alert("Credenciales incorreptas");
+      mostrarError("Acceso denegado", "El correo o la contraseña son incorrectos.");
+      
     }
   }
 

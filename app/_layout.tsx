@@ -4,6 +4,7 @@ import "@/global.css";
 import { Stack } from "expo-router";
 import { SQLiteProvider } from "expo-sqlite";
 import { inicializarBaseDatos } from '../infrastructure/database/database';
+import Toast from 'react-native-toast-message';
 
 export default function RootLayout() {
   return (
@@ -20,6 +21,7 @@ export default function RootLayout() {
             <Stack.Screen name="perfil" />
             <Stack.Screen name="historial" />
           </Stack>
+          <Toast />
         </SQLiteProvider>
       </CarritoProvider>
     </AuthProvider>
