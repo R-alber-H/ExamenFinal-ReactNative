@@ -3,9 +3,9 @@ import { ImageBackground, View, Text, Image } from "react-native";
 
 export default function BannerCategoria({nombre}:{nombre:string}) {
   const fondos: { [key: string]: any } = {
-      Naruto: require("../assets/fondo_banner_categoria.png"),
-      DragonBall: require("../assets/fondoBannerDZ.png"),
-      OnePiece: require("../assets/fondoBannerOnePice.png"),
+      Naruto: require("../assets/fondo_banner_categoria.jpg"),
+      DragonBall: require("../assets/fondoBannerDZ.jpg"),
+      OnePiece: require("../assets/fondoBannerOnePice.jpg"),
       Default: require("../assets/logo_funko_2.png") 
     };
   const imagen: { [key: string]: any } = {
