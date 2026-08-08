@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function Index() {
   return (
     <ImageBackground
-      source={require("../assets/fondo_naruto.png")}
+      source={require("../assets/fondo_naruto.jpg")}
       resizeMode="cover"
       className="flex-1"
     >

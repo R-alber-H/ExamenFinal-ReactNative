@@ -23,14 +23,13 @@ export default function Login() {
     validarFormularioCompleto,
   } = useLoginForm();
 
-  const manejarIngreso = () =>{
+  const manejarIngreso = async () => {
     if (!validarFormularioCompleto()) return;
-    const exito = login({email,password});
-    if(exito){
+    const resultado = await login({ email, password });
+    if (resultado.conExito) {
       router.replace('/home');
-    }else{
-      mostrarError("Acceso denegado", "El correo o la contraseña son incorrectos.");
-      
+    } else {
+      mostrarError("Acceso denegado", resultado.mensaje);
     }
   }
 

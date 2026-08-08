@@ -46,7 +46,7 @@ export default function Home() {
               </Link>
 
               <TouchableOpacity className="p-2 bg-white rounded-full shadow-sm border border-slate-100"
-              onPress={logout}
+              onPress={() => logout()}
               >
                 <Ionicons name="exit-outline" size={20} color="#0f172a" />
               </TouchableOpacity>

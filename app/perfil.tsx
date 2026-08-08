@@ -99,7 +99,7 @@ export default function Perfil() {
     
     <View className="w-[48%] bg-white p-3 rounded-2xl border border-slate-100 shadow-sm items-center mb-2">
       <Image
-        source={require("../assets/funkoKakashi.png")}
+        source={require("../assets/funkoKakashi.jpg")}
         className="w-full h-32 mb-2"
         resizeMode="contain"
       />
@@ -108,7 +108,7 @@ export default function Perfil() {
 
     <View className="w-[48%] bg-white p-3 rounded-2xl border border-slate-100 shadow-sm items-center mb-2">
       <Image
-        source={require("../assets/funkoItachi.png")}
+        source={require("../assets/funkoItachi.jpg")}
         className="w-full h-32 mb-2"
         resizeMode="contain"
       />
